@@ -454,7 +454,12 @@ static const CGFloat kCancelHighlightThreshold = 4.0f;
     TT_RELEASE_SAFELY(_accessibilityElements);
     _text = [text retain];
     _text.delegate = self;
-    _text.font = _font;
+    if (!_text.font) {
+        _text.font = _font;
+
+    } else {
+        _font = text.font;
+    }
     _text.textAlignment = _textAlignment;
     [self setNeedsLayout];
     [self setNeedsDisplay];

@@ -105,12 +105,12 @@ static const CGFloat kDisclosureIndicatorWidth = 23.0f;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)didMoveToSuperview {
-  [super didMoveToSuperview];
-  if (self.superview) {
-    _label.backgroundColor = self.backgroundColor;
-  }
-}
+//- (void)didMoveToSuperview {
+//  [super didMoveToSuperview];
+//  if (self.superview) {
+//    _label.backgroundColor = self.backgroundColor;
+//  }
+//}
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

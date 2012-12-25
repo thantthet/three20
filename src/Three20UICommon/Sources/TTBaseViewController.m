@@ -102,17 +102,21 @@
 	CGPoint keyboardEnd;
 	[[notification.userInfo objectForKey:UIKeyboardCenterEndUserInfoKey] getValue:&keyboardEnd];
 
+    NSTimeInterval animationDuration;
+	[[notification.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey]
+     getValue:&animationDuration];
+
 	BOOL animated = keyboardStart.y != keyboardEnd.y;
   if (animated) {
     [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:TT_TRANSITION_DURATION];
+    [UIView setAnimationDuration:animationDuration];
   }
 
   if (appearing) {
     [self keyboardWillAppear:animated withBounds:keyboardBounds];
 
   } else {
-    [self keyboardDidDisappear:animated withBounds:keyboardBounds];
+    [self keyboardWillDisappear:animated withBounds:keyboardBounds];
   }
 
   if (animated) {
@@ -298,25 +302,25 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)keyboardDidHide:(NSNotification*)notification {
-  if (self.isViewAppearing) {
-    [self resizeForKeyboard:notification appearing:NO];
-  }
+#ifdef __IPHONE_3_21
+    CGRect frameEnd;
+    [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&frameEnd];
+
+    CGRect keyboardBounds = CGRectMake(0, 0, frameEnd.size.width, frameEnd.size.height);
+#else
+    CGRect keyboardBounds;
+    [[notification.userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
+#endif
+
+    [self keyboardDidDisappear:YES withBounds:keyboardBounds];
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)keyboardWillHide:(NSNotification*)notification {
-#ifdef __IPHONE_3_21
-  CGRect frameEnd;
-  [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] getValue:&frameEnd];
-
-  CGRect keyboardBounds = CGRectMake(0, 0, frameEnd.size.width, frameEnd.size.height);
-#else
-  CGRect keyboardBounds;
-  [[notification.userInfo objectForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
-#endif
-
-  [self keyboardWillDisappear:YES withBounds:keyboardBounds];
+    if (self.isViewAppearing) {
+        [self resizeForKeyboard:notification appearing:NO];
+    }
 }
 
 

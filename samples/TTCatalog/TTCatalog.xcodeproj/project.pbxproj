@@ -30,6 +30,7 @@
 		6E94C6AE116D98220012B12C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E94C6AC116D98220012B12C /* Icon.png */; };
 		7000C4C0130CCAE3006D7ADE /* DownloadTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000C4BE130CCAE3006D7ADE /* DownloadTestModel.m */; };
 		7000C4C1130CCAE3006D7ADE /* DownloadProgressTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000C4BF130CCAE3006D7ADE /* DownloadProgressTestController.m */; };
+		B5E6003F164BAE880099EF53 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B5E6003E164BAE880099EF53 /* Default-568h@2x.png */; };
 		BE1288310F8973CD00F65EA2 /* StyleTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE1288300F8973CD00F65EA2 /* StyleTestController.m */; };
 		BE1289C20F91811E00F65EA2 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1289C10F91811E00F65EA2 /* mask.png */; };
 		BE1D843A0F8D104B00EC8BB8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D84390F8D104B00EC8BB8 /* QuartzCore.framework */; };
@@ -249,6 +250,7 @@
 		7000C4BF130CCAE3006D7ADE /* DownloadProgressTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadProgressTestController.m; sourceTree = "<group>"; };
 		7000C4C2130CCB0F006D7ADE /* DownloadTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTestModel.h; sourceTree = "<group>"; };
 		7000C4C3130CCB0F006D7ADE /* DownloadProgressTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadProgressTestController.h; sourceTree = "<group>"; };
+		B5E6003E164BAE880099EF53 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		BE12882F0F8973CD00F65EA2 /* StyleTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleTestController.h; sourceTree = "<group>"; };
 		BE1288300F8973CD00F65EA2 /* StyleTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleTestController.m; sourceTree = "<group>"; };
 		BE1289C10F91811E00F65EA2 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mask.png; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				B5E6003E164BAE880099EF53 /* Default-568h@2x.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				6E7F995E118E3A4800443B46 /* Configurations */,
@@ -976,6 +979,7 @@
 				6675F5F512945622008DE0A6 /* Default-Portrait.png in Resources */,
 				6675F5F612945622008DE0A6 /* Default@2x.png in Resources */,
 				6675F5F712945622008DE0A6 /* Icon@2x.png in Resources */,
+				B5E6003F164BAE880099EF53 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
