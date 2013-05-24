@@ -30,6 +30,7 @@
   NSInteger _maxNumberOfLines;
 
   BOOL _editing;
+  BOOL _enabled;
   BOOL _overflowed;
   BOOL _autoresizesToText;
   BOOL _showsExtraLine;
@@ -46,9 +47,9 @@
 @property (nonatomic)           NSInteger maxNumberOfLines;
 
 @property (nonatomic, readonly) BOOL editing;
+@property (nonatomic)           BOOL enabled;
 @property (nonatomic)           BOOL autoresizesToText;
 @property (nonatomic)           BOOL showsExtraLine;
-@property (nonatomic)           BOOL enabled;
 
 @property (nonatomic, assign) id<TTTextEditorDelegate> delegate;
 

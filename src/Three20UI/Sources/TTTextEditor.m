@@ -53,6 +53,7 @@ static const CGFloat kUITextViewVerticalPadding = 6.0f;
 @synthesize minNumberOfLines  = _minNumberOfLines;
 @synthesize maxNumberOfLines  = _maxNumberOfLines;
 @synthesize editing           = _editing;
+@synthesize enabled           = _enabled;
 @synthesize autoresizesToText = _autoresizesToText;
 @synthesize showsExtraLine    = _showsExtraLine;
 @synthesize delegate          = _delegate;
@@ -68,7 +69,7 @@ static const CGFloat kUITextViewVerticalPadding = 6.0f;
     _textField = [[UITextField alloc] init];
     _textField.delegate = _internal;
     [self addSubview:_textField];
-      
+
     _enabled = YES;
   }
 
