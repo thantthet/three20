@@ -48,6 +48,7 @@
 @property (nonatomic, readonly) BOOL editing;
 @property (nonatomic)           BOOL autoresizesToText;
 @property (nonatomic)           BOOL showsExtraLine;
+@property (nonatomic)           BOOL enabled;
 
 @property (nonatomic, assign) id<TTTextEditorDelegate> delegate;
 

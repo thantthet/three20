@@ -68,6 +68,8 @@ static const CGFloat kUITextViewVerticalPadding = 6.0f;
     _textField = [[UITextField alloc] init];
     _textField.delegate = _internal;
     [self addSubview:_textField];
+      
+    _enabled = YES;
   }
 
   return self;
@@ -465,6 +467,14 @@ static const CGFloat kUITextViewVerticalPadding = 6.0f;
   _textField.textColor = textColor;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setEnabled:(BOOL)enabled {
+    if (_enabled != enabled) {
+        _textField.enabled = enabled;
+        _textView.editable = enabled;
+        _enabled = enabled;
+    }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)scrollContainerToCursor:(UIScrollView*)scrollView {
