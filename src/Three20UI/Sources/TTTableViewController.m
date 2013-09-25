@@ -101,6 +101,8 @@
   TT_RELEASE_SAFELY(_emptyView);
   TT_RELEASE_SAFELY(_tableOverlayView);
   TT_RELEASE_SAFELY(_tableBannerView);
+  TT_RELEASE_SAFELY(_menuView);
+  TT_RELEASE_SAFELY(_menuCell);
 
   [super dealloc];
 }
@@ -238,31 +240,6 @@
     [self setTableBannerView:savedTableBannerView animated:NO];
     [savedTableBannerView release];
   }
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewDidUnload {
-  [super viewDidUnload];
-  _tableView.delegate = nil;
-  _tableView.dataSource = nil;
-  TT_RELEASE_SAFELY(_tableDelegate);
-  TT_RELEASE_SAFELY(_tableView);
-  [_tableOverlayView removeFromSuperview];
-  TT_RELEASE_SAFELY(_tableOverlayView);
-  [_loadingView removeFromSuperview];
-  TT_RELEASE_SAFELY(_loadingView);
-  [_errorView removeFromSuperview];
-  TT_RELEASE_SAFELY(_errorView);
-  [_emptyView removeFromSuperview];
-  TT_RELEASE_SAFELY(_emptyView);
-  [_menuView removeFromSuperview];
-  TT_RELEASE_SAFELY(_menuView);
-  [_menuCell removeFromSuperview];
-  TT_RELEASE_SAFELY(_menuCell);
-
-  // Do not release _tableBannerView, because we have no way to recreate it on demand if
-  // this view gets reloaded.
 }
 
 

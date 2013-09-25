@@ -98,6 +98,11 @@ static CGFloat kPadding = 5.0f;
   TT_RELEASE_SAFELY(_footerBar);
   TT_RELEASE_SAFELY(_previousRightBarButtonItem);
 
+  TT_RELEASE_SAFELY(_textBar);
+  TT_RELEASE_SAFELY(_textEditor);
+  TT_RELEASE_SAFELY(_postButton);
+  TT_RELEASE_SAFELY(_previousRightBarButtonItem);
+
   [super dealloc];
 }
 
@@ -181,16 +186,6 @@ static CGFloat kPadding = 5.0f;
   _textEditor.autoresizingMask = UIViewAutoresizingFlexibleRightMargin;
   _textBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
   _footerBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewDidUnload {
-  [super viewDidUnload];
-  TT_RELEASE_SAFELY(_textBar);
-  TT_RELEASE_SAFELY(_textEditor);
-  TT_RELEASE_SAFELY(_postButton);
-  TT_RELEASE_SAFELY(_previousRightBarButtonItem);
 }
 
 

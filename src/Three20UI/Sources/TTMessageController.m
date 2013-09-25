@@ -106,6 +106,11 @@
   TT_RELEASE_SAFELY(_fields);
   TT_RELEASE_SAFELY(_initialRecipients);
 
+  TT_RELEASE_SAFELY(_scrollView);
+  TT_RELEASE_SAFELY(_fieldViews);
+  TT_RELEASE_SAFELY(_textEditor);
+  TT_RELEASE_SAFELY(_activityView);
+
   [super dealloc];
 }
 
@@ -331,16 +336,6 @@
 
   [self createFieldViews];
   [self layoutViews];
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewDidUnload {
-  [super viewDidUnload];
-  TT_RELEASE_SAFELY(_scrollView);
-  TT_RELEASE_SAFELY(_fieldViews);
-  TT_RELEASE_SAFELY(_textEditor);
-  TT_RELEASE_SAFELY(_activityView);
 }
 
 

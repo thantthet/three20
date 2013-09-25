@@ -73,6 +73,7 @@
 - (void)dealloc {
   [[TTURLRequestQueue mainQueue] cancelRequestsWithDelegate:self];
 
+  TT_RELEASE_SAFELY(_searchController);
   [super dealloc];
 }
 
@@ -95,13 +96,6 @@
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view.backgroundColor = TTSTYLEVAR(backgroundColor);
   }
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewDidUnload {
-  [super viewDidUnload];
-  TT_RELEASE_SAFELY(_searchController);
 }
 
 

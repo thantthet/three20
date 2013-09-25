@@ -139,6 +139,15 @@ static const NSInteger kActivityLabelTag          = 96;
   TT_RELEASE_SAFELY(_captionStyle);
   TT_RELEASE_SAFELY(_defaultImage);
 
+  _scrollView.delegate = nil;
+  _scrollView.dataSource = nil;
+  TT_RELEASE_SAFELY(_innerView);
+  TT_RELEASE_SAFELY(_scrollView);
+  TT_RELEASE_SAFELY(_photoStatusView);
+  TT_RELEASE_SAFELY(_nextButton);
+  TT_RELEASE_SAFELY(_previousButton);
+  TT_RELEASE_SAFELY(_toolbar);
+
   [super dealloc];
 }
 
@@ -545,20 +554,6 @@ static const NSInteger kActivityLabelTag          = 96;
   _toolbar.items = [NSArray arrayWithObjects:
                     space, _previousButton, space, _nextButton, space, nil];
   [_innerView addSubview:_toolbar];
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewDidUnload {
-  [super viewDidUnload];
-  _scrollView.delegate = nil;
-  _scrollView.dataSource = nil;
-  TT_RELEASE_SAFELY(_innerView);
-  TT_RELEASE_SAFELY(_scrollView);
-  TT_RELEASE_SAFELY(_photoStatusView);
-  TT_RELEASE_SAFELY(_nextButton);
-  TT_RELEASE_SAFELY(_previousButton);
-  TT_RELEASE_SAFELY(_toolbar);
 }
 
 

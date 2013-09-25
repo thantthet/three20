@@ -94,6 +94,18 @@
   TT_RELEASE_SAFELY(_headerView);
   TT_RELEASE_SAFELY(_actionSheet);
 
+  _delegate = nil;
+  _webView.delegate = nil;
+
+  TT_RELEASE_SAFELY(_webView);
+  TT_RELEASE_SAFELY(_toolbar);
+  TT_RELEASE_SAFELY(_backButton);
+  TT_RELEASE_SAFELY(_forwardButton);
+  TT_RELEASE_SAFELY(_refreshButton);
+  TT_RELEASE_SAFELY(_stopButton);
+  TT_RELEASE_SAFELY(_actionButton);
+  TT_RELEASE_SAFELY(_activityItem);
+
   [super dealloc];
 }
 
@@ -228,24 +240,6 @@
                     _actionButton,
                     nil];
   [self.view addSubview:_toolbar];
-}
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-- (void)viewDidUnload {
-  [super viewDidUnload];
-
-  _delegate = nil;
-  _webView.delegate = nil;
-
-  TT_RELEASE_SAFELY(_webView);
-  TT_RELEASE_SAFELY(_toolbar);
-  TT_RELEASE_SAFELY(_backButton);
-  TT_RELEASE_SAFELY(_forwardButton);
-  TT_RELEASE_SAFELY(_refreshButton);
-  TT_RELEASE_SAFELY(_stopButton);
-  TT_RELEASE_SAFELY(_actionButton);
-  TT_RELEASE_SAFELY(_activityItem);
 }
 
 
