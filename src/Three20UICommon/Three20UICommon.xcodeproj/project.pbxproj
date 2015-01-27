@@ -289,7 +289,7 @@
 			name = Three20UICommonUnitTests;
 			productName = CoreUnitTests;
 			productReference = EB9E6C6210B6A8F800DE563C /* UICommonUnitTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
