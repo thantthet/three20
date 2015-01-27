@@ -96,6 +96,11 @@ CGAffineTransform TTRotateTransformForOrientation(UIInterfaceOrientation orienta
 CGRect TTApplicationFrame();
 
 /**
+ * @return the size of thumbs view.
+ */
+CGFloat TTThumbsSize();
+
+/**
  * @return the toolbar height for a given orientation.
  *
  * The toolbar is slightly shorter in landscape.

@@ -242,7 +242,11 @@ CGRect TTApplicationFrame() {
   return CGRectMake(0, 0, frame.size.width, frame.size.height);
 }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
+CGFloat TTThumbsSize() {
+  CGRect bounds = [[UIScreen mainScreen] bounds];
+  return (MIN(bounds.size.width, bounds.size.height) / 4) - 4;
+}
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 CGFloat TTToolbarHeightForOrientation(UIInterfaceOrientation orientation) {
   if (UIInterfaceOrientationIsPortrait(orientation) || TTIsPad()) {

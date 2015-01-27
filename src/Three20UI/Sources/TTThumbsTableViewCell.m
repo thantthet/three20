@@ -23,6 +23,9 @@
 #import "Three20UI/TTPhotoSource.h"
 #import "Three20UI/TTPhoto.h"
 
+// UICommon
+#import "Three20UICommon/TTGlobalUICommon.h"
+
 // Core
 #import "Three20Core/TTCorePreprocessorMacros.h"
 
@@ -47,7 +50,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 	self = [super initWithStyle:style reuseIdentifier:identifier];
   if (self) {
     _thumbViews = [[NSMutableArray alloc] init];
-    _thumbSize = kDefaultThumbSize;
+    _thumbSize = TTThumbsSize();
     _thumbOrigin = CGPointMake(kSpacing, 0);
 
     self.accessoryType = UITableViewCellAccessoryNone;

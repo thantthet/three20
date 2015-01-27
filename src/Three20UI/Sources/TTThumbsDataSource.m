@@ -21,6 +21,9 @@
 #import "Three20UI/TTTableMoreButton.h"
 #import "Three20UI/TTThumbsTableViewCell.h"
 
+// UICommon
+#import "Three20UICommon/TTGlobalUICommon.h"
+
 // UINavigator
 #import "Three20UINavigator/TTGlobalNavigatorMetrics.h"
 
@@ -81,7 +84,7 @@ static CGFloat kThumbSpacing = 4.0f;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (NSInteger)columnCountForView:(UIView *)view {
   CGFloat width = view.bounds.size.width;
-  return floorf((width - kThumbSpacing*2) / (kThumbSize+kThumbSpacing) + 0.1);
+  return floorf((width - kThumbSpacing*2) / (TTThumbsSize()+kThumbSpacing) + 0.1);
 }
 
 
